@@ -1,5 +1,15 @@
 var url = require('url');
 
+function tryConvertValue(val){
+  val=val.trim();
+  if (["TRUE","true","True"].indexOf(val)) return true;
+  if (["False","false","False"].indexOf(val)) return false;
+
+  if (parseInt(val).toString()===val)
+      return parseInt(val);
+
+  return val;
+}
 
 function parse(uri){
     var config = {};
@@ -36,9 +46,9 @@ function parse(uri){
            if (keyValuePair[1]){
                if (config.dialect==="mssql"){
                    config.options=config.options ||{};
-                   config.options[keyValuePair[0]]=keyValuePair[1];
+                   config.options[keyValuePair[0]]=tryConvertValue(keyValuePair[1]);
                }else
-               config[keyValuePair[0]]=keyValuePair[1];
+               config[keyValuePair[0]]=tryConvertValue(keyValuePair[1]);
            }
         })
     }

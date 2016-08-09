@@ -1,6 +1,6 @@
 {
   "name": "dburi2config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "dbUri2config.js",
   "scripts": {
@@ -10,5 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "url": "^0.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/noteon/dburi2config.git",
+    "web": "https://github.com/noteon/dburi2config.git"
+  }  
 }
