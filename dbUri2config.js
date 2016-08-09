@@ -15,7 +15,7 @@ function parse(uri){
     var config = {};
 
     var urlParts = url.parse(uri);
-    console.log(urlParts)
+    //console.log(urlParts)
 
     // SQLite don't have DB in connection url
     if (urlParts.pathname) {
